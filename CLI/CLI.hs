@@ -12,10 +12,13 @@ module CLI.CLI
 import Options.Applicative as O
 import System.FilePath
 
+version :: String
+version = "1.0"
+
 opts :: ParserInfo Options
 opts = info (helper <*> parseOptions)
     ( fullDesc
-     <> progDesc "Program to qbf/sat encode looping properties of string rewriting systems."
+     <> progDesc ( "Program to qbf/sat encode looping properties of string rewriting systems.\n Version: " ++ version )
      <> header "QENCODE" )
 
 execCLI :: IO Options
